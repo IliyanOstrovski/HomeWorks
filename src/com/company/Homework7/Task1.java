@@ -14,21 +14,25 @@ public class Task1 {
         int consecutiveLateness = 0;
         for (int i = 0; i < attendanceStr.length(); i++) {
             char c = attendanceStr.charAt(i);
-            if (c == 'О') {
-                absences++;
-                if (absences > 2) {
-                    return false;
+            switch (c) {
+                case 'О' -> {
+                    absences++;
+                    if (absences > 2) {
+                        return false;
+                    }
+                    consecutiveLateness = 0;
                 }
-                consecutiveLateness = 0;
-            } else if (c == 'З') {
-                consecutiveLateness++;
-                if (consecutiveLateness >= 3) {
-                    return false;
+                case 'З' -> {
+                    consecutiveLateness++;
+                    if (consecutiveLateness >= 3) {
+                        return false;
+                    }
+                    absences = 0;
                 }
-                absences = 0;
-            } else if (c == 'П') {
-                absences = 0;
-                consecutiveLateness = 0;
+                case 'П' -> {
+                    absences = 0;
+                    consecutiveLateness = 0;
+                }
             }
         }
         return true;

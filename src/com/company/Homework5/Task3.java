@@ -14,7 +14,7 @@ public class Task3 {
     public static int[] getSubarray(int[] arr, int start) {
         int[] subarray = new int[arr.length - start];
         if (start >= arr.length || start < 0) {
-            // if start index is out of bounds or is less than 0
+            // if start  is out of bounds or is less than 0
             start = 0;
         }
         // copy the elements from the original array to the subarray

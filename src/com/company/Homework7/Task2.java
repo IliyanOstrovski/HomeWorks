@@ -11,12 +11,9 @@ public class Task2 {
         System.out.println(compareStrings(str3, str4));
     }
     public static boolean compareStrings(String str1, String str2) {
-        // Remove whitespace
-        str1 = str1.trim();
-        str2 = str2.trim();
-
-        str1 = str1.toLowerCase();
-        str2 = str2.toLowerCase();
+        // Remove spaces
+        str1 = str1.strip().toLowerCase();
+        str2 = str2.strip().toLowerCase();
 
         return str1.equals(str2);
     }
