@@ -2,7 +2,7 @@ package com.company.Homework9;
 
 public class Task3 {
     public void main(String[] args) {
-        Range r1 = new Range(1, 3);
+        Range r1 = new Range(5, 3);
         Range r2 = new Range(2, 5);
         r1.merge(r2);
         System.out.println(r1);
@@ -22,6 +22,9 @@ public class Task3 {
         }
 
         public boolean overlaps(Range r) {
+            if (r == null) {
+                return false;
+            }
             return this.contains(r.start)
                     || this.contains(r.end)
                     || r.contains(this.start)
@@ -29,6 +32,9 @@ public class Task3 {
         }
 
         public boolean merge(Range r) {
+            if (r == null) {
+                return false;
+            }
             if (this.overlaps(r)) {
                 this.start = Math.min(this.start, r.start);
                 this.end = Math.max(this.end, r.end);

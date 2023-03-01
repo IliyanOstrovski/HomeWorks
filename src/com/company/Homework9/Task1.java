@@ -5,14 +5,16 @@ import java.util.Set;
 
 public class Task1 {
     public static void main(String[] args) {
-        System.out.println(sameLetters("abc", "cba"));
+        System.out.println(sameLetters("", "cba"));
         System.out.println(sameLetters("abc", "ab"));
-        System.out.println(sameLetters("ababc", "abcccc"));
+        System.out.println(sameLetters("ababc", "abccccd"));
     }
 
 
     public static boolean sameLetters(String s1, String s2) {
-        if (s1 == null || s2 == null) {
+        if (s1 == null || s2 == null ) {
+            return false;
+        } else if (s1.length() == 0 || s2.length() == 0) {
             return false;
         }
 
