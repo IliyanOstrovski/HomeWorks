@@ -6,8 +6,8 @@ public class Task1 {
         String date2 = "12-06-2021";
         System.out.println(getDaysBetween(date1, date2));
 
-        String date3 = "01-01-2021";
-        String date4 = "01-02-2021";
+        String date3 = "1-01-2021";
+        String date4 = "1-02-2021";
         System.out.println(getDaysBetween(date3, date4));
     }
 
@@ -26,7 +26,7 @@ public class Task1 {
         int days1 = day1 + getDaysBeforeMonth(month1, year1) + (year1 - 1) * 365 + countLeapYears(year1);
         int days2 = day2 + getDaysBeforeMonth(month2, year2) + (year2 - 1) * 365 + countLeapYears(year2);
 
-        return Math.abs(days2 - days1);
+        return days2 - days1;
     }
 
     private static int getDaysInMonth(int month, int year) {
