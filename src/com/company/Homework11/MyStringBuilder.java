@@ -7,7 +7,6 @@ public class MyStringBuilder {
     private int count;
     private int capacity;
 
-
     public MyStringBuilder() {
         value = new char[25];
     }
@@ -71,7 +70,6 @@ public class MyStringBuilder {
         System.arraycopy(sb.value, 0, value, count, len);
         count += len;
     }
-
 
     public int indexOf(String str) {
         return indexOf(str, 0);
