@@ -1,4 +1,4 @@
-package com.company;
+package com.company.stackExample;
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;

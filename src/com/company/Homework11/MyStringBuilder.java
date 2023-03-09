@@ -3,12 +3,14 @@ package com.company.Homework11;
 import java.util.Arrays;
 
 public class MyStringBuilder {
+    private static final int INITIAL_CAPACITY = 25;
+
     private char[] value;
     private int count;
     private int capacity;
 
     public MyStringBuilder() {
-        value = new char[25];
+        this(INITIAL_CAPACITY);
     }
 
     public MyStringBuilder(int capacity) {
@@ -35,12 +37,13 @@ public class MyStringBuilder {
     }
 
     public void ensureCapacity(int minimumCapacity) {
-        if (minimumCapacity > capacity) {
-            capacity = Math.max(minimumCapacity, capacity * 2);
-            char[] newValue = new char[capacity];
-            System.arraycopy(value, 0, newValue, 0, count);
-            value = newValue;
+        if (minimumCapacity <= capacity) {
+          return;
         }
+        capacity = Math.max(minimumCapacity, capacity * 2);
+        char[] newValue = new char[capacity];
+        System.arraycopy(value, 0, newValue, 0, count);
+        value = newValue;
     }
 
     public void setCharAt(int index, char ch) {
@@ -62,7 +65,7 @@ public class MyStringBuilder {
     }
 
     public void append(MyStringBuilder sb) {
-        if (sb == null) {
+        if (sb == null || sb.length() == 0) {
             return;
         }
         int len = sb.length();
