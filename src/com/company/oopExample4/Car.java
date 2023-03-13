@@ -74,7 +74,6 @@ class Car extends Vehicle implements Repairable {
                 e.printStackTrace();
             }
         }
-
         return "";
     }
 }

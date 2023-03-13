@@ -173,7 +173,6 @@ public class MyStringBuilder {
         for (int i = 0; i < strLen; i++) {
             this.setCharAt(start + i, str.charAt(i));
         }
-
         // Delete any remaining characters after the end index
         this.delete(start + strLen, end);
 
