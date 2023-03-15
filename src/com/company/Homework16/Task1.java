@@ -50,7 +50,6 @@ public class Task1 {
             }
         }
         return result.toArray(new Employee[result.size()]);
-
     }
 }
 
