@@ -9,10 +9,13 @@ public class NumberSet {
         size = 0;
     }
 
-    public void add(int n) {
+    public void add(int n) { //TODO
         try {
             if (size == elements.length) {
                 throw new IllegalStateException("NumberSet is already full capacity");
+            }
+            if (size > 31) {
+                throw new IllegalStateException("Size can't be bigger than 31.");
             }
         }
         catch (IllegalStateException e) {
@@ -23,7 +26,7 @@ public class NumberSet {
         }
     }
 
-    public void delete(int n) {
+    public void delete(int n) { //TODO
         for (int i = 0; i < size; i++) {
             if (elements[i] == n) {
                 // Move all elements after the deleted one up by one index
@@ -86,4 +89,3 @@ public class NumberSet {
         return sb.toString();
     }
 }
-
